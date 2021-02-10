@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Technology used
+- Bootstrap 4.1
+- Angular CLI: 10.2.1
+- Node: 15.0.1
+- typescript 4.0.5
