@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Mama-Wa-Estate"
+    }
+  },
+  "defaultProject": "Mama-Wa-Estate",
+  "cli": {
+    "analytics": "63e1a8d5-50c5-4e90-8111-7d924ea50dab"
+  }
 }
