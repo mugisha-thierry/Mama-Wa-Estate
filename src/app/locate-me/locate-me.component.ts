@@ -39,7 +39,12 @@ showPosition(position) {
 }
 
 
-  constructor() { }
+  constructor(){
+    if (navigator)
+    {
+    navigator.geolocation.getCurrentPosition( pos => {
+      this.currentLong = +pos.coords.longitude;
+      this.currentLat = +pos.coords.latitude;
 
   ngOnInit(): void {
   }

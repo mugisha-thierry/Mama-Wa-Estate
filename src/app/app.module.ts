@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 <<<<<<< HEAD
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BlogComponent } from './blog/blog.component';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { LocateMeComponent } from './locate-me/locate-me.component';
 
