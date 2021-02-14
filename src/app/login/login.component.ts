@@ -8,7 +8,8 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginUserData = {}
+  loginUserData: any = {};
+  // loginUserData = {}
 
   constructor(private _auth: AuthService) { }
 
