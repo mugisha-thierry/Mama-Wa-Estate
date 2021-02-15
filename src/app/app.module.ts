@@ -5,46 +5,50 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-<<<<<<< HEAD
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { LocateMeComponent } from './locate-me/locate-me.component';
 
 
 // import { LandingComponent } from './landing/landing.component';
-=======
+
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
->>>>>>> fd2531a1a77459ae74543261cfb46fe1781461b5
+import { ProductsComponent } from './products/products.component';
+import { GpsService } from './gps.service';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LocateMeComponent,
-<<<<<<< HEAD
-    
 
-=======
     NavbarComponent,
     SearchComponent,
     HomeComponent,
     RegisterComponent,
+    LoginComponent,
+    ProductsComponent,
     LoginComponent
->>>>>>> fd2531a1a77459ae74543261cfb46fe1781461b5
   ],
   imports: [
+    NgProgressModule.forRoot(),
+    NgProgressHttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, GpsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
