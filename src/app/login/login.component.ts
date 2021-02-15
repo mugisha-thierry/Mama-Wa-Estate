@@ -18,12 +18,12 @@ export class LoginComponent implements OnInit {
 
 
   loginUser () {
-    // console.log(this.loginUserData)
-    this._auth.loginUser(this.loginUserData)
-     .subscribe(
-       res => console.log(res),
-       err => console.log(err)
-     )
+    console.log(this.loginUserData)
+    // this._auth.loginUser(this.loginUserData)
+    //  .subscribe(
+    //    res => console.log(res),
+    //    err => console.log(err)
+    //  )
   }
 
 }
