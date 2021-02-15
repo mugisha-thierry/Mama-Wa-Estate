@@ -62,8 +62,10 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Mama-Wa-Estate:build"
+            "browserTarget": "Mama-Wa-Estate:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
+          
           "configurations": {
             "production": {
               "browserTarget": "Mama-Wa-Estate:build:production"
