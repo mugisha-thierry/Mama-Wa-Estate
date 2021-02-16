@@ -13,6 +13,8 @@ import { LocateMeComponent } from './locate-me/locate-me.component';
 
 // import { LandingComponent } from './landing/landing.component';
 
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
@@ -20,6 +22,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { ProductsComponent } from './products/products.component';
+import { GpsService } from './gps.service';
 
 
 
@@ -37,13 +40,15 @@ import { ProductsComponent } from './products/products.component';
     LoginComponent
   ],
   imports: [
+    NgProgressModule.forRoot(),
+    NgProgressHttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, GpsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,7 +5,8 @@ import { GpsService } from '../gps.service';
 @Component({
   selector: 'app-locate-me',
   templateUrl: './locate-me.component.html',
-  styleUrls: ['./locate-me.component.css']
+  styleUrls: ['./locate-me.component.css'],
+  providers: [GpsService]
 })
 export class LocateMeComponent implements OnInit {
   currentLat: any;

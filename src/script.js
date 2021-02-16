@@ -19,7 +19,7 @@ function showPosition(position) {
     
       var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=
     
-       "+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_KEY";
+       "+latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyAgBh9gsaBhoWFVUgdpc7i7jXBfR3ONuGs";
     
     
        document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
