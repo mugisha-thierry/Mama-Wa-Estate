@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
@@ -27,7 +27,9 @@ import { StoreComponent } from './store/store.component';
 import { CategoryComponent } from './category/category.component';
 import { FooterComponent } from './footer/footer.component';
 import { StoreService } from './store.service';
-
+import { AuthGuard } from './auth.guard';
+import { CatComponent } from './cat/cat.component';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import { StoreService } from './store.service';
     LoginComponent,
     StoreComponent,
     CategoryComponent,
-    FooterComponent
+    FooterComponent,
+    CatComponent
   ],
   imports: [
     NgProgressModule.forRoot(),
@@ -55,7 +58,12 @@ import { StoreService } from './store.service';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [AuthService, GpsService, StoreService],
+  providers: [AuthService,AuthGuard, GpsService, StoreService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
