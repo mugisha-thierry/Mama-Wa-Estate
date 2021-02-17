@@ -27,6 +27,7 @@ import { StoreComponent } from './store/store.component';
 import { CategoryComponent } from './category/category.component';
 import { FooterComponent } from './footer/footer.component';
 import { StoreService } from './store.service';
+import { LocateDirective } from './locate.directive';
 
 
 
@@ -44,7 +45,8 @@ import { StoreService } from './store.service';
     LoginComponent,
     StoreComponent,
     CategoryComponent,
-    FooterComponent
+    FooterComponent,
+    LocateDirective
   ],
   imports: [
     NgProgressModule.forRoot(),

@@ -1,6 +1,43 @@
-<div class="container">
-  <ng-progress></ng-progress>
-  <h1>Locate Me</h1>
-<input type="text" class="form-control" id="position"
-       required
-       [(ngModel)]="location.position" name="location">
+<h1>My Location</h1>
+<ul>
+    <div *ngFor='let location of locations;let i = index'>
+        <li appLocate>{{location.name}}</li>
+        <button  (click)='toggleLocation(i)'>Toggle Location </button>
+
+    <app-locate-details *ngIf="location.showDescription" [location]='location' (isComplete)= 'completeLocation($address,i)'></app-locate-details>
+    
+    </div>
+</ul>
+<p *ngIf='location.length > 5'>Register your location</p>
+
+<form>
+  <div>
+    <label>Name</label>
+    <input type="text" name="name" ngModel/>
+  </div>
+  <div>
+    <h3>Location</h3>
+    <div>
+      <label>Country</label>
+      <input type="text" name="country" ngModel/>
+    </div>
+    <div>
+      <label>City</label>
+      <input type="text" name="city" ngModel/>
+    </div>
+  </div>
+
+  <div>
+    <h3>Address</h3>
+    <div>
+      <label>Address 1</label>
+      <input type="text" name="addressNumber[1]" ngModel/>
+      <button type="button">remove</button>
+    </div>
+    <button type="button">Add address</button>
+  </div>
+  <form #myForm="ngForm" (ngSubmit)="register(myForm)">
+  <button type="submit">Register</button>
+  <button type="button">Print to console</button>
+  
+</form>
