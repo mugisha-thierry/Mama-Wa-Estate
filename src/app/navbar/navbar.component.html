@@ -25,7 +25,7 @@
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Fetching your location"
                     aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" (click)="locateMe()">Locate me</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" (click)="locateMe()"><i class="fas fa-map-marker-alt"></i>Locate me</button>
             </form>
         </ul>
         <div>
@@ -45,7 +45,11 @@
                 <li class="nav-item active">
                     <a class="btn btn-dark" *ngIf="!_authService.loggedIn()" routerLink="/login"><i class="fas fa-user"></i> Login</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="btn btn-dark" *ngIf="_authService.loggedIn()" routerLink="#"><i class="fas fa-id-card"></i>Profile</a>
+                </li>
                 <a class="btn btn-dark" style="color: white;" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                
             </ul>
         </div>
     </div>
