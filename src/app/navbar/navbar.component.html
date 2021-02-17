@@ -29,7 +29,7 @@
             </form>
         </ul>
         <div>
-            <a href=""><i class="fas fa-shopping-cart fa-2x" style="color:white;"></i></a>
+            <a routerLink="/cat"><i class="fas fa-shopping-cart fa-2x" style="color:white;"></i></a>
         </div>&nbsp;&nbsp;&nbsp;&nbsp;
         <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
             <ul class="navbar-nav text-right">
@@ -40,11 +40,12 @@
                     <a class="btn btn-dark" routerLink="search"><i class="fas fa-search"></i> Search</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="btn btn-dark" routerLink="/register"> Register</a>
+                    <a class="btn btn-dark" *ngIf="!_authService.loggedIn()" routerLink="/register"> Register</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="btn btn-dark" routerLink="/login"><i class="fas fa-user"></i> Login</a>
+                    <a class="btn btn-dark" *ngIf="!_authService.loggedIn()" routerLink="/login"><i class="fas fa-user"></i> Login</a>
                 </li>
+                <a class="btn btn-dark" style="color: white;" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()"><i class="fas fa-sign-out-alt"></i>Logout</a>
             </ul>
         </div>
     </div>
