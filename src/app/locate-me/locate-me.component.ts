@@ -13,7 +13,8 @@ export class LocateMeComponent implements OnInit {
   currentLong: any;
   marker: any;
   map: any;
- location:any ={}
+  location:any ={};
+  watchPosition: any;
   
 locateMe() {
   if (navigator.geolocation) {
@@ -47,15 +48,33 @@ locateMe() {
 
 
   constructor(private navigator: GpsService){
-    if (navigator){
-
-      navigator.geolocation.getCurrentPosition( pos => {
-      this.currentLong = +pos.coords.longitude;
-      this.currentLat = +pos.coords.latitude;
-      })
-    }
+    
   }
 
   ngOnInit(): void {
+    if (!navigator.geolocation) {
+      console.log('location is not supported');
+
+      navigator.geolocation.getCurrentPosition( position => {
+        console.log(
+          'lat: ${position.coords.latitude}, lon: ${position.coords.longitude}'
+          );
+      
+      });
+    }
+    watchPosition(){
+      navigator.geolocation.watchPosition((position) => {
+        console.log(
+          'lat: ${position.coords.latitude}, lon: ${position.coords.longitude}'
+        );
+      },(err) => {
+        console.log(err);
+      },{
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      })
+      
+    }
   }
 }
