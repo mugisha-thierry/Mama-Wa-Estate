@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 declare const L: any;
 
@@ -38,7 +39,7 @@ export class NavbarComponent implements OnInit {
     
   }
 
-  constructor() { }
+  constructor(public _authService: AuthService) { }
 
   ngOnInit(): void {
     if (!navigator.geolocation) {

@@ -4,6 +4,8 @@ import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { CatComponent } from './cat/cat.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -11,6 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'search', component: SearchComponent},
+  { path: 'cat', component: CatComponent, canActivate:[AuthGuard]},
   { path: '', redirectTo: "/home", pathMatch: "full" },
 ];
 
