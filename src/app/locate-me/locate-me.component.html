@@ -1,15 +1,3 @@
-<h1>My Location</h1>
-<ul>
-    <div *ngFor='let location of locations;let i = index'>
-        <li appLocate>{{location.name}}</li>
-        <button  (click)='toggleLocation(i)'>Toggle Location </button>
-
-    <app-locate-details *ngIf="location.showDescription" [location]='location' (isComplete)= 'completeLocation($address,i)'></app-locate-details>
-    
-    </div>
-</ul>
-<p *ngIf='location.length > 5'>Register your location</p>
-
 <form #myForm="ngForm" (ngSubmit)="register(myForm)">
   <div>
     <label>Name</label>
@@ -36,7 +24,6 @@
     </div>
     <button type="button">Add address</button>
   </div>
-  <form #myForm="ngForm" (ngSubmit)="register(myForm)">
   <button type="submit">Register</button>
   <button type="button">Print to console</button>
   

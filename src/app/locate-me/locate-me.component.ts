@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { GpsService } from '../gps.service';
 
 
@@ -14,16 +15,22 @@ export class LocateMeComponent implements OnInit {
   marker: any;
   map: any;
   location:any ={};
-  watchPosition: any;
+ 
   
-locateMe() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      // this.showPosition(position);
-    });
-  } else {
-    alert("Geolocation is not supported by this browser.");
-  }
+
+watchPosition(){
+  navigator.geolocation.watchPosition((position) => {
+    console.log(
+      'lat: ${position.coords.latitude}, lon: ${position.coords.longitude}'
+    );
+  },(err) => {
+    console.log(err);
+  },{
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  })
+  
 }
 
 //this is for plotting marker
@@ -62,20 +69,7 @@ locateMe() {
       
       });
     }
-    watchPosition(){
-      navigator.geolocation.watchPosition((position) => {
-        console.log(
-          'lat: ${position.coords.latitude}, lon: ${position.coords.longitude}'
-        );
-      },(err) => {
-        console.log(err);
-      },{
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
-      })
-      
-    }
+   
   }
   register (myForm: NgForm) {
     console.log('Successful registration');

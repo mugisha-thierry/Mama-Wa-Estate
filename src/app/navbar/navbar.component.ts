@@ -11,5 +11,16 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  locateMe() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        let currentLat = position.coords.latitude;
+        let currentLong = position.coords.longitude;
+        console.log(currentLat)
+        console.log(currentLong)
+      });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
 }
