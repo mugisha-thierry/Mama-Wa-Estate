@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { GpsService } from '../gps.service';
 
 
@@ -13,16 +14,23 @@ export class LocateMeComponent implements OnInit {
   currentLong: any;
   marker: any;
   map: any;
- location:any ={}
+  location:any ={};
+ 
   
-locateMe() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      // this.showPosition(position);
-    });
-  } else {
-    alert("Geolocation is not supported by this browser.");
-  }
+
+watchPosition(){
+  navigator.geolocation.watchPosition((position) => {
+    console.log(
+      'lat: ${position.coords.latitude}, lon: ${position.coords.longitude}'
+    );
+  },(err) => {
+    console.log(err);
+  },{
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  })
+  
 }
 
 //this is for plotting marker
@@ -47,15 +55,24 @@ locateMe() {
 
 
   constructor(private navigator: GpsService){
-    if (navigator){
-
-      navigator.geolocation.getCurrentPosition( pos => {
-      this.currentLong = +pos.coords.longitude;
-      this.currentLat = +pos.coords.latitude;
-      })
-    }
+    
   }
 
   ngOnInit(): void {
+    if (!navigator.geolocation) {
+      console.log('location is not supported');
+
+      navigator.geolocation.getCurrentPosition( position => {
+        console.log(
+          'lat: ${position.coords.latitude}, lon: ${position.coords.longitude}'
+          );
+      
+      });
+    }
+   
+  }
+  register (myForm: NgForm) {
+    console.log('Successful registration');
+    console.log(myForm);
   }
 }

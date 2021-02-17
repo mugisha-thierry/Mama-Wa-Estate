@@ -20,4 +20,35 @@ import {
 })
 export class AppComponent {
   title = 'Mama-Wa-Estate';
+
+  locateMe() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        let currentLat = position.coords.latitude;
+        let currentLong = position.coords.longitude;
+        console.log(currentLat)
+        console.log(currentLong)
+      });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+  watchPosition(){
+    let deslat = 0;
+    let deslon = 0;
+    let id = navigator.geolocation.watchPosition(
+      (position) => {
+      console.log(
+        'lat: ${position.coords.latitude}, lon: ${position.coords.longitude}'
+      );
+    },(err) => {
+      console.log(err);
+    },{
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    })
+    
+  }
 }
+  

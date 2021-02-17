@@ -1,6 +1,30 @@
-<div class="container">
-  <ng-progress></ng-progress>
-  <h1>Locate Me</h1>
-<input type="text" class="form-control" id="position"
-       required
-       [(ngModel)]="location.position" name="location">
+<form #myForm="ngForm" (ngSubmit)="register(myForm)">
+  <div>
+    <label>Name</label>
+    <input type="text" name="name" ngModel/>
+  </div>
+  <div>
+    <h3>Location</h3>
+    <div>
+      <label>Country</label>
+      <input type="text" name="country" ngModel/>
+    </div>
+    <div>
+      <label>City</label>
+      <input type="text" name="city" ngModel/>
+    </div>
+  </div>
+
+  <div>
+    <h3>Address</h3>
+    <div>
+      <label>Address 1</label>
+      <input type="text" name="addressNumber[1]" ngModel/>
+      <button type="button">remove</button>
+    </div>
+    <button type="button">Add address</button>
+  </div>
+  <button type="submit">Register</button>
+  <button type="button">Print to console</button>
+  
+</form>

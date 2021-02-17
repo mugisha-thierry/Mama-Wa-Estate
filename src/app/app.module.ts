@@ -12,7 +12,6 @@ import { LocateMeComponent } from './locate-me/locate-me.component';
 
 
 // import { LandingComponent } from './landing/landing.component';
-
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -27,9 +26,13 @@ import { StoreComponent } from './store/store.component';
 import { CategoryComponent } from './category/category.component';
 import { FooterComponent } from './footer/footer.component';
 import { StoreService } from './store.service';
+
+import { LocateDirective } from './locate.directive';
+
 import { AuthGuard } from './auth.guard';
 import { CatComponent } from './cat/cat.component';
 import { TokenInterceptorService } from './token-interceptor.service';
+
 
 
 @NgModule({
@@ -47,6 +50,8 @@ import { TokenInterceptorService } from './token-interceptor.service';
     StoreComponent,
     CategoryComponent,
     FooterComponent,
+
+    LocateDirective,
     CatComponent
   ],
   imports: [
