@@ -10,7 +10,7 @@
 </ul>
 <p *ngIf='location.length > 5'>Register your location</p>
 
-<form>
+<form #myForm="ngForm" (ngSubmit)="register(myForm)">
   <div>
     <label>Name</label>
     <input type="text" name="name" ngModel/>

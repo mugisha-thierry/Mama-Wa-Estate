@@ -12,7 +12,6 @@ import { LocateMeComponent } from './locate-me/locate-me.component';
 
 
 // import { LandingComponent } from './landing/landing.component';
-
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { NavbarComponent } from './navbar/navbar.component';

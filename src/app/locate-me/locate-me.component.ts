@@ -77,4 +77,8 @@ locateMe() {
       
     }
   }
+  register (myForm: NgForm) {
+    console.log('Successful registration');
+    console.log(myForm);
+  }
 }
