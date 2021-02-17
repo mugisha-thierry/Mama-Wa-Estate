@@ -23,6 +23,10 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { ProductsComponent } from './products/products.component';
 import { GpsService } from './gps.service';
+import { StoreComponent } from './store/store.component';
+import { CategoryComponent } from './category/category.component';
+import { FooterComponent } from './footer/footer.component';
+import { StoreService } from './store.service';
 
 
 
@@ -37,7 +41,10 @@ import { GpsService } from './gps.service';
     RegisterComponent,
     LoginComponent,
     ProductsComponent,
-    LoginComponent
+    LoginComponent,
+    StoreComponent,
+    CategoryComponent,
+    FooterComponent
   ],
   imports: [
     NgProgressModule.forRoot(),
@@ -48,7 +55,7 @@ import { GpsService } from './gps.service';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [AuthService, GpsService],
+  providers: [AuthService, GpsService, StoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
