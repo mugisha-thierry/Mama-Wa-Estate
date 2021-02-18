@@ -9,6 +9,7 @@ import { mergeMap, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CategoryService {
+  [x: string]: any;
   getCategories(): Observable<any[]> {
     return this.db.list('/categories')
     .snapshotChanges().pipe(

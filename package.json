@@ -22,6 +22,7 @@
     "@ngx-progressbar/core": "^3.0.2",
     "@ngx-progressbar/http-client": "^3.0.2",
     "@syncfusion/ej2-angular-richtexteditor": "^18.4.42",
+    "angular-google-maps": "^2.4.1",
     "ngx-progressbar": "^6.1.0",
     "rxjs": "~6.6.0",
     "rxjs-compat": "^6.6.3",
