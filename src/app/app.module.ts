@@ -27,6 +27,7 @@ import { CategoryComponent } from './category/category.component';
 import { FooterComponent } from './footer/footer.component';
 import { StoreService } from './store.service';
 import { LocateDirective } from './locate.directive';
+import { CategoryService } from './category.service';
 
 
 
@@ -56,7 +57,7 @@ import { LocateDirective } from './locate.directive';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [AuthService, GpsService, StoreService],
+  providers: [AuthService, GpsService, StoreService, CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
