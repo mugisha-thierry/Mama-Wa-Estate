@@ -1,8 +1,8 @@
 <body style="background-color:rgb(250, 250, 250);">
-<div class="container">
-        <h4 class="text-info mb-3">All</h4>
+    <div class="container">
+        <h4 class="text-info mb-3">All Categories</h4>
         <div class="row">
-        <img src="https://d2sz1kgdtrlf1n.cloudfront.net/task_images/6Rb31555416834089-artboard.png"
+            <img src="https://d2sz1kgdtrlf1n.cloudfront.net/task_images/6Rb31555416834089-artboard.png"
 
             <div class="col-md-2">
                 <div class="card mb-3" style="max-width: 400px;">
@@ -68,35 +68,12 @@
             </div>
 
         </div>
-    </div>
 
-<div class="row">
-    <div class="col-4">
-        <div class="list-group">
-            <a
-                *ngFor="let c of (category$ | async)" 
-                routerLink="/admin/expert-category" [queryParams]="{ category: c.key }"
-                class="list-group-item list-group-item-action"
-                [class.active]="category === c.key">
-                {{ c.name }}
-            </a>
-        </div>
     </div>
-<div class="col">
-    <div class="row">
-        <ng-container *ngFor="let categories of filteredCategories; let i = index">
-            <div class="col">
-                <div class="card">
-                    <!--<div class="card-body">-->
-                        <ul class="list-group list-group-horizontal">
-                        <li class="list-group-item">{{ categories }}</li>
-                        </ul>
-                    <!--/div>-->
-                </div>
-            </div>
-    <div  *ngIf="(i+1) % 4 === 0" class="-w-100"></div>
-    </ng-container>     
-    </div>
-    </div>
-</div>
+        
+
+
+    
+   
+    
 </body>

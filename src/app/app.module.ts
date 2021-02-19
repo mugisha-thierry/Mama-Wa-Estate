@@ -40,7 +40,6 @@ import { TokenInterceptorService } from './token-interceptor.service';
   declarations: [
     AppComponent,
     LocateMeComponent,
-
     NavbarComponent,
     SearchComponent,
     HomeComponent,
@@ -51,7 +50,6 @@ import { TokenInterceptorService } from './token-interceptor.service';
     StoreComponent,
     CategoryComponent,
     FooterComponent,
-
     LocateDirective,
     CatComponent
   ],
