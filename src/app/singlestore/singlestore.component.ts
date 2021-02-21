@@ -36,5 +36,7 @@ export class SinglestoreComponent implements OnInit {
     )
 
   }
-  
+    selectProduct(id: Number) {
+    this.router.navigate(['/product', id]).then();
+  }
 }
