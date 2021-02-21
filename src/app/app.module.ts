@@ -41,7 +41,6 @@ import { ProfileComponent } from './profile/profile.component';
   declarations: [
     AppComponent,
     LocateMeComponent,
-
     NavbarComponent,
     SearchComponent,
     HomeComponent,
@@ -52,7 +51,6 @@ import { ProfileComponent } from './profile/profile.component';
     StoreComponent,
     CategoryComponent,
     FooterComponent,
-
     LocateDirective,
     SinglestoreComponent,
     CartComponent,

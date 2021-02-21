@@ -13,30 +13,8 @@ import { mergeMap, map, tap } from 'rxjs/operators';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-  private selectedCategory = new BehaviorSubject<string>('stores');
-  category$: Observable<any>;
-  category: string;
-  categories$: Observable<any>;
-  selectedCategory$ = this.selectedCategory.asObservable();
-  closeResult: string;
-  filteredCategories: any[] = [];
-  specialization: any[] = [];
-  
-  
-  constructor(private categoryService: CategoryService, route: ActivatedRoute, private router: Router, private modalService: NgModel) {
-    this.categoryService.getCategories().subscribe(specialization => {
-      this.specialization = specialization;
-      console.log(this.specialization);
-      route.queryParamMap.subscribe(params => {
-        this.category = params.get('category');
 
-        this.filteredCategories = (this.category) ? this.specialization.filter(s => s.category === this.category) : this.specialization;
-        console.log(this.filteredCategories);
-        });
-    });
-
-    this.category$ = this.categoryService.getAll();
-   }
+  constructor() { }
 
   ngOnInit(): void {
   }
