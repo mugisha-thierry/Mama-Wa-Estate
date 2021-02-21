@@ -4,7 +4,7 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card mb-3" style="max-width: 400px; border-radius: 80px;">
+                        <div class="card mb-3" style="max-width: 400px; border-radius: 80px;" >
                             <div class="row no-gutters">
                                 <div class="col-md-4" style="margin-top: 30px;">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col-md-4" *ngFor="let product of products">
                 <ng-container *ngIf="product.store == store.id">
-                    <div class="card mb-3" style="max-width: 400px;">
+                    <div class="card mb-3" style="max-width: 400px;" (click)="selectProduct(product.id)" style="cursor:pointer;">
                         <div class="row no-gutters">
                             <div class="col-md-4" style="margin-top: 30px;">
                                 <img src="product.image" alt="">
