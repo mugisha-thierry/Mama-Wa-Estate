@@ -1,3 +1,98 @@
 <body style="background-color:rgb(250, 250, 250);">
-<p>category works!</p>
+    <div class="container">
+        <h4 class="text-info mb-3">All</h4>
+        <div class="row">
+            <img src="https://d2sz1kgdtrlf1n.cloudfront.net/task_images/6Rb31555416834089-artboard.png" <div
+                class="col-md-2">
+            <div class="card mb-3" style="max-width: 400px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4" style="margin-top: 30px;">
+                        <img src="https://d2sz1kgdtrlf1n.cloudfront.net/yelo_products/thumb-200-200-nj31583698002523-Screenshot20200309at1.33.06AM.png"
+                            class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p class="card-title">Pharmacy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="card mb-3" style="max-width: 400px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4" style="margin-top: 30px;">
+                        <img src="https://d2sz1kgdtrlf1n.cloudfront.net/yelo_products/thumb-200-200-AHt1583697987214-Screenshot20200309at1.33.00AM.png"
+                            class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p class="card-title">Electronics and Gadgets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="card mb-3" style="max-width: 400px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4" style="margin-top: 30px;">
+                        <img src="https://d2sz1kgdtrlf1n.cloudfront.net/yelo_products/thumb-200-200-hkc1583697969568-Screenshot20200309at1.32.55AM.png"
+                            class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p class="card-title">Clothing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card mb-3" style="max-width: 400px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4" style="margin-top: 30px;">
+                        <img src="https://d2sz1kgdtrlf1n.cloudfront.net/yelo_products/thumb-200-200-D2Z1583697954333-Screenshot20200309at1.32.49AM.png"
+                            class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p class="card-title">Food</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="list-group">
+                <a *ngFor="let c of (category$ | async)" routerLink="/admin/expert-category"
+                    [queryParams]="{ category: c.key }" class="list-group-item list-group-item-action"
+                    [class.active]="category === c.key">
+                    {{ c.name }}
+                </a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <ng-container *ngFor="let categories of filteredCategories; let i = index">
+                    <div class="col">
+                        <div class="card">
+                            <!--<div class="card-body">-->
+                            <ul class="list-group list-group-horizontal">
+                                <li class="list-group-item">{{ categories }}</li>
+                            </ul>
+                            <!--/div>-->
+                        </div>
+                    </div>
+                    <div *ngIf="(i+1) % 4 === 0" class="-w-100"></div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
 </body>

@@ -27,6 +27,7 @@ import { FooterComponent } from './footer/footer.component';
 import { StoreService } from './store.service';
 
 import { LocateDirective } from './locate.directive';
+import { CategoryService } from './category.service';
 
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
