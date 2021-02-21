@@ -8,10 +8,12 @@ import { AuthGuard } from './auth.guard';
 import { ProductsComponent } from './products/products.component';
 import { SinglestoreComponent } from './singlestore/singlestore.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
+  { path: 'checkout', component: CheckoutComponent},
   { path: 'singlestore/:id', component: SinglestoreComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
