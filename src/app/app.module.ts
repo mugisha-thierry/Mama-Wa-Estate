@@ -34,6 +34,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { SinglestoreComponent } from './singlestore/singlestore.component';
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 
@@ -54,7 +55,8 @@ import { ProfileComponent } from './profile/profile.component';
     LocateDirective,
     SinglestoreComponent,
     CartComponent,
-    ProfileComponent
+    ProfileComponent,
+    CheckoutComponent
   ],
   imports: [
     NgProgressModule.forRoot(),
