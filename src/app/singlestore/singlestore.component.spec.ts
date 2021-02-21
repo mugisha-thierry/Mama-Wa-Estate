@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CatComponent } from './cat.component';
+import { SinglestoreComponent } from './singlestore.component';
 
-describe('CatComponent', () => {
-  let component: CatComponent;
-  let fixture: ComponentFixture<CatComponent>;
+describe('SinglestoreComponent', () => {
+  let component: SinglestoreComponent;
+  let fixture: ComponentFixture<SinglestoreComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CatComponent ]
+      declarations: [ SinglestoreComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CatComponent);
+    fixture = TestBed.createComponent(SinglestoreComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

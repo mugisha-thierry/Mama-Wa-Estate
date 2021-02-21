@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { LocateMeComponent } from './locate-me/locate-me.component';
 
 
@@ -31,8 +30,10 @@ import { LocateDirective } from './locate.directive';
 import { CategoryService } from './category.service';
 
 import { AuthGuard } from './auth.guard';
-import { CatComponent } from './cat/cat.component';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { SinglestoreComponent } from './singlestore/singlestore.component';
+import { CartComponent } from './cart/cart.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -53,7 +54,9 @@ import { TokenInterceptorService } from './token-interceptor.service';
     FooterComponent,
 
     LocateDirective,
-    CatComponent
+    SinglestoreComponent,
+    CartComponent,
+    ProfileComponent
   ],
   imports: [
     NgProgressModule.forRoot(),
