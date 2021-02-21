@@ -14,17 +14,10 @@ export class HomeComponent implements OnInit {
   constructor(private _productService: ProductsService, private router:Router) { }
 
   ngOnInit(): void {
-    // this._productService.getAllproducts()
-    // .subscribe(
-    //   res => this.products = res,
-    //   err => console.log(err)
-    // )
   }
 
 
-  // selectProduct(id: Number) {
-  //   this.router.navigate(['/product', id]).then();
-  // }
+
 
   
 }
