@@ -20,6 +20,8 @@ import {
 })
 export class AppComponent {
   title = 'Mama-Wa-Estate';
+  lat = -1.2877824
+  lng = 36.814848;
 
   locateMe() {
     if (navigator.geolocation) {
