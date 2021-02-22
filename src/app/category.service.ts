@@ -1,6 +1,8 @@
 import { tokenName } from '@angular/compiler';
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 import { mergeMap, map, tap } from 'rxjs/operators';
 
 
@@ -8,27 +10,13 @@ import { mergeMap, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CategoryService {
-  [x: string]: any;
-  // getCategories(): Observable<any[]> {
-  //   return this.db.list('/categories')
-  //   .snapshotChanges().pipe(
-  //     map(actions =>
-  //       actions.map(data => ({ key: data.key, ...data.payload.val() }))
-  //   ));
-  // }
+   // URL which returns list of JSON items (API end-point URL)
+   private readonly URL = 'http://localhost:4200/category';
 
-  // getAll(): Observable<any[]> {
-  //   return this.db.list('/category')
-  //   .snapshotChanges().pipe(
-  //     map(category =>
-  //       category.map(cat => {
-  //           const key = cat.key;
-  //           const payload = cat.payload.val();
-  //           return { key, ...payload };
-  //         })),
-  //       );
-  // }
-
-
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  
+  resolveCategory(): Observable<any> {
+    console.log('All Categories available!');
+    return this.http.get(this.URL);
+  }
 }
