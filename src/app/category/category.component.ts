@@ -13,8 +13,30 @@ import { mergeMap, map, tap } from 'rxjs/operators';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
+  name = 'All Categories';
+  private selectedCategory = new BehaviorSubject<string>('pharmacy');
 
-  constructor() { }
+  category$: Observable<any>;
+  selectedCategory$ = this.selectedCategory.asObservable();
+  categories$: Observable<any>;
+  list : any;
+
+
+  constructor() {
+    this.categories$ = this.selectedCategory$
+    .pipe(
+      mergeMap(selectedCategory => this.list
+                                       .categories$
+                                       .pipe(map((category: any) => category[selectedCategory]))
+     )
+   );
+
+// this.category$ = this.list.category$
+//           .pipe(
+//             tap((category: any) => this.selectedCategory.next('pharmacy')),
+//             map(categoryObj => Object.keys(categoryObj).map((key,index) => categoryObj[key].name))
+//            );
+   }
 
   ngOnInit(): void {
   }
