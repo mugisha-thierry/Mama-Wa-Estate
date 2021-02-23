@@ -9,10 +9,12 @@ import { ProductsComponent } from './products/products.component';
 import { SinglestoreComponent } from './singlestore/singlestore.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
+  {path: 'profile', component: ProfileComponent},
   { path: 'checkout', component: CheckoutComponent},
   { path: 'singlestore/:id', component: SinglestoreComponent},
   { path: 'login', component: LoginComponent},

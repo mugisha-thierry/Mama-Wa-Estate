@@ -3,6 +3,7 @@ import { StoreService } from '../store.service';
 import { map } from 'rxjs/operators';
 import { ParamMap, ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from '../products.service';
+import { AddToCartService } from '../add-to-cart.service';
 
 @Component({
   selector: 'app-singlestore',
@@ -14,7 +15,8 @@ export class SinglestoreComponent implements OnInit {
   id: number;
   store;
   products = []
-  constructor(private _productService: ProductsService,private _storeService: StoreService, private route: ActivatedRoute, private router: Router) { }
+  data:any={}
+  constructor(private _addTo:AddToCartService, private _productService: ProductsService,private _storeService: StoreService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.paramMap.pipe(
@@ -35,8 +37,19 @@ export class SinglestoreComponent implements OnInit {
       err => console.log(err)
     )
 
+
+
+
   }
     selectProduct(id: Number) {
     this.router.navigate(['/product', id]).then();
+  }
+  AddToCart(id:number){
+    this._addTo.Add(id,this.data)
+    .subscribe(
+      res=>console.log("success"),
+      err=>console.log(err)
+    )
+
   }
 }
