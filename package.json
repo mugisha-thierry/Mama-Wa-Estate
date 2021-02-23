@@ -26,6 +26,7 @@
     "angular-flash-message": "^3.4.0",
     "angular-google-maps": "^2.1.6",
     "bootstrap": "^4.6.0",
+    "ngx-flash-messages": "^1.0.4",
     "ngx-progressbar": "^6.1.0",
     "rxjs": "~6.6.0",
     "rxjs-compat": "^6.6.3",

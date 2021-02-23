@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { FlashMessagesModule } from 'ngx-flash-messages';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -66,6 +67,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    FlashMessagesModule,
   ],
   providers: [AuthService,AuthGuard, GpsService, StoreService,
     {

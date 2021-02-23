@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { FlashMessagesService } from 'ngx-flash-messages';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   loginUserData: any = {};
   // loginUserData = {}
 
-  constructor(private _auth: AuthService, private _router: Router) { }
+  constructor(private flashMessagesService: FlashMessagesService,private _auth: AuthService, private _router: Router) { }
 
   ngOnInit(): void {
   }
@@ -27,7 +28,12 @@ export class LoginComponent implements OnInit {
          this._router.navigate(['/home'])
         //  console.log(res)
         },
-       err => console.log(err)
+       err =>{
+        this.flashMessagesService.show('Enter valid Credentials!', {
+          classes: ['alert', 'alert-warning'], // You can pass as many classes as you need
+          timeout: 5000, // Default is 3000
+        });
+       }
      )
   }
 
