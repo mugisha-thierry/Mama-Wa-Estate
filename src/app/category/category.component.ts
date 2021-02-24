@@ -31,11 +31,7 @@ export class CategoryComponent implements OnInit {
      )
    );
 
-// this.category$ = this.list.category$
-//           .pipe(
-//             tap((category: any) => this.selectedCategory.next('pharmacy')),
-//             map(categoryObj => Object.keys(categoryObj).map((key,index) => categoryObj[key].name))
-//            );
+
    }
 
   ngOnInit(): void {
