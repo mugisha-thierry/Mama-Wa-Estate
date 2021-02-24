@@ -1,3 +1,69 @@
-<body style="margin-top: 75px;">
-    <p>checkout works!</p> 
+<body style="margin-top: 75px;background-color: rgb(250, 250, 250);">
+    <h2 class="text-info mb-3 text-black-50 text-center" style="padding-top: 20px;">Checkout</h2>
+    <div class="container" style="padding-top: 5px;">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card mb-3" style="max-width: 400px;" style="cursor:pointer; border-radius: 20px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title text-center" style="color: black; font-weight: bold;" style="cursor:pointer;">
+                                    Location <i class="fas fa-globe"></i></h5>
+                                <p class="card-text" style="color: black;">Current Location</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card mb-3" style="max-width: 400px;" style="cursor:pointer; border-radius: 20px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title text-center" style="color: black; font-weight: bold;" style="cursor:pointer;">
+                                    Payiment method <i class="far fa-credit-card"></i></h5>
+                                    <input type="radio" id="vehicle1" name="vehicle1" value="Bike">&nbsp;
+                                    <label for="vehicle1"> M-PESA</label><br>
+                                    <input type="radio" id="vehicle2" name="vehicle2" value="Car">&nbsp;
+                                    <label for="vehicle2"> Master card or visa card</label><br>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card mb-3" style="max-width: 400px;" style="cursor:pointer; border-radius: 20px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <p>Products</p>
+                                <p>Delivery fee</p>
+                                <p>Total</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    
+    <div class="text-center" style="padding-top: 50px;">
+        <button class="btn btn-primary" routerLink="/home">Confirm Order</button>
+    </div>
 </body>

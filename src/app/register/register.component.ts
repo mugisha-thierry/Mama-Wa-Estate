@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { FlashMessagesService } from 'ngx-flash-messages';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class RegisterComponent implements OnInit {
   registerUserData:any = {}
   // registerUserData = {}
 
-  constructor(private _auth: AuthService,private _router: Router) { }
+  constructor(private flashMessagesService: FlashMessagesService,private _auth: AuthService,private _router: Router) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +27,12 @@ export class RegisterComponent implements OnInit {
         this._router.navigate(['/home'])
         // console.log(res)
       },
-      err => console.log(err)
+      err =>{
+        this.flashMessagesService.show('Something is missing !', {
+          classes: ['alert', 'alert-warning'], // You can pass as many classes as you need
+          timeout: 5000, // Default is 3000
+        });
+      }
     )      
   }
 

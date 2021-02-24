@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { AddToCartService } from '../add-to-cart.service';
 
 declare const L: any;
 
@@ -38,10 +39,18 @@ export class NavbarComponent implements OnInit {
     })
     
   }
-
-  constructor(public _authService: AuthService) { }
+  products =[]
+  constructor(private _cartProductsService:AddToCartService,public _authService: AuthService) { }
 
   ngOnInit(): void {
+    this._cartProductsService.getCartProducts()
+    .subscribe(
+    res=>{
+      this.products =res
+      console.log(this.products.length)
+    },
+    err => console.log(err)
+    )
     if (!navigator.geolocation) {
       console.log('location is not supported');
 

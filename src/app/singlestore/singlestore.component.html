@@ -1,4 +1,4 @@
-<body style="background-color: rgb(250, 250, 250); margin-top: 65px;">
+<body style="background-color: #b4dce6; margin-top: 65px;">
     <ngx-flash-messages></ngx-flash-messages>
     <div class="container" style="padding-top: 20px;">
         <div class="row">
@@ -28,17 +28,27 @@
                 </div>
             </div>
             <div class="col-md-6">
-                
+                <h2 class="text-info mb-3 text-black-50 text-center">MENU</h2>
+
+                <ul *ngFor="let product of products" style="margin-left: 150px;">
+                    <ng-container *ngIf="product.store == store.id">
+                        <li>{{product.name}}</li>
+                    </ng-container>
+                </ul>
             </div>
         </div>
     </div>
     <hr>
-    <h2 class="text-info mb-3 text-center">Products</h2>
+    <h2 class="text-info mb-3 text-black-50 text-center">Products</h2>
     <div class="container">
         <div class="row">
             <div class="col-md-4" *ngFor="let product of products">
                 <ng-container *ngIf="product.store == store.id">
+<<<<<<< HEAD
                     <div class="card mb-3" style="max-width: 400px;"  style="cursor:pointer;">
+=======
+                    <div class="card mb-3" style="max-width: 400px;"  style="cursor:pointer; border-radius: 15px;">
+>>>>>>> 3e535169411e6959bab9756d82e443c97dd60c0b
                         <div class="row no-gutters">
                             <div class="col-md-4" (click)="selectProduct(product.id)" style="margin-top: 30px;">
                                 <img src="product.image" alt="">

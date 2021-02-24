@@ -1,4 +1,4 @@
-<body style="margin-top: 70px;">
+<body style="margin-top: 70px; background-color: #b4dce6;">
 <ngx-flash-messages></ngx-flash-messages>
   <div class="container">
     <!-- <div *ngIf="cartData.data[0].numInCart === 0;" class="text-center my-5">
@@ -41,7 +41,11 @@
                   <!-- <div class="value-button" id="increase"> -->
                     <!-- <i class="fa fa-plus"></i>
                   </div> -->
+<<<<<<< HEAD
                   <button (click)="update(p.id)">Submit</button>
+=======
+                  
+>>>>>>> 3e535169411e6959bab9756d82e443c97dd60c0b
                 </form>
               </td>
               <td>
@@ -54,7 +58,11 @@
               <td></td>
               <td></td>
               <td *ngIf="(products | json) != '[]'">TOTAL</td>
+<<<<<<< HEAD
               <td *ngIf="(products | json) != '[]'"></td>
+=======
+              <td *ngIf="(products | json) != '[]'">{{answe()}}</td>
+>>>>>>> 3e535169411e6959bab9756d82e443c97dd60c0b
               <td *ngIf="(products | json) === '[]'">No products in the cart</td>
               <!-- <td>{{cartTotal | currency:'USD'}}</td> -->
 
