@@ -10,10 +10,12 @@ import { SinglestoreComponent } from './singlestore/singlestore.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LocateMeComponent } from './locate-me/locate-me.component';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
+  { path: 'locateme', component:LocateMeComponent},
   {path: 'profile', component: ProfileComponent},
   { path: 'checkout', component: CheckoutComponent},
   { path: 'singlestore/:id', component: SinglestoreComponent},

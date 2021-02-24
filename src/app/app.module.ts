@@ -26,6 +26,7 @@ import { StoreComponent } from './store/store.component';
 import { CategoryComponent } from './category/category.component';
 import { FooterComponent } from './footer/footer.component';
 import { StoreService } from './store.service';
+import { AgmCoreModule } from '@agm/core';
 
 import { LocateDirective } from './locate.directive';
 import { CategoryService } from './category.service';
@@ -57,10 +58,14 @@ import { CheckoutComponent } from './checkout/checkout.component';
     SinglestoreComponent,
     CartComponent,
     ProfileComponent,
-    CheckoutComponent
+    CheckoutComponent,
+
   ],
   imports: [
     NgProgressModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAgBh9gsaBhoWFVUgdpc7i7jXBfR3ONuGs'
+    }),
     NgProgressHttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
