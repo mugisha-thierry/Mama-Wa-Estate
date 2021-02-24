@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,10 @@ export class AddToCartService {
     return this.http.delete<any>(this.deleteUrl+'cartproduct/'+id)
   }
   updateQty(id:number,body){
-    return this.http.put<any>(this.url+ 'cartproduct/' + id+'/',body)
+    return this.http.put<any>(this.url+ 'cartproduct/' + id+'/',body,{
+      headers:new HttpHeaders({
+         'content-Type':'application/json'
+      })
+    })
   }
 }
