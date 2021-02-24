@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
     <a class="navbar-brand" href="#">
         <img src="https://d2sz1kgdtrlf1n.cloudfront.net/task_images/uZ9H1599208413110-YeloEommerceLogo2.png" width="190"
             height="50" alt="">
@@ -26,30 +26,30 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Fetching your location"
                     aria-label="Search">
                 <a href="locateMe"></a>
-                <button class="btn btn-outline-success my-2 my-sm-0" (click)="locateMe()"><i class="fas fa-map-marker-alt"></i>Locate me</button>
+                <button class="btn btn-outline-light my-2 my-sm-0" (click)="locateMe()"><i class="fas fa-map-marker-alt"></i> Locate me</button>
             </form>
         </ul>
         <div>
-            <a routerLink="/cart"><i class="fas fa-shopping-cart fa-2x" style="color:white;"></i></a>
+            <a routerLink="/cart"><i class="fas fa-shopping-cart fa-2x" style="color:white;"></i><span style="color: black; font-weight: bold;">{{products.length}}</span></a>
         </div>&nbsp;&nbsp;&nbsp;&nbsp;
         <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
             <ul class="navbar-nav text-right">
                 <li class="nav-item active">
-                    <a class="btn btn-dark" href="#">Sell with us</a>
-                </li>
+                    <a class="btn btn-light" href="#">Sell with us</a>
+                </li>&nbsp;
                 <li class="nav-item active">
-                    <a class="btn btn-dark" routerLink="search"><i class="fas fa-search"></i> Search</a>
-                </li>
+                    <a class="btn btn-light" routerLink="search"><i class="fas fa-search"></i> Search</a>
+                </li>&nbsp;
                 <li class="nav-item active">
-                    <a class="btn btn-dark" *ngIf="!_authService.loggedIn()" routerLink="/register"> Register</a>
-                </li>
+                    <a class="btn btn-light" *ngIf="!_authService.loggedIn()" routerLink="/register"> Register</a>
+                </li>&nbsp;
                 <li class="nav-item active">
-                    <a class="btn btn-dark" *ngIf="!_authService.loggedIn()" routerLink="/login"><i class="fas fa-user"></i> Login</a>
-                </li>
+                    <a class="btn btn-light" *ngIf="!_authService.loggedIn()" routerLink="/login"><i class="fas fa-user"></i> Login</a>
+                </li>&nbsp;
                 <li class="nav-item active">
-                    <a class="btn btn-dark" *ngIf="_authService.loggedIn()" routerLink="profile"><i class="fas fa-id-card"></i>Profile</a>
-                </li>
-                <a class="btn btn-dark" style="color: white;" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                    <a class="btn btn-light" *ngIf="_authService.loggedIn()" routerLink="profile"><i class="fas fa-id-card"></i>Profile</a>
+                </li>&nbsp;
+                <a class="btn btn-light" style="color: black;" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()"><i class="fas fa-sign-out-alt"></i>Logout</a>
                 
             </ul>
         </div>

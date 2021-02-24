@@ -1,39 +1,41 @@
 <div class="py-5" style="margin-top: 65px;">
+    <ngx-flash-messages></ngx-flash-messages>
+    <div class="text-center" style="padding-bottom: 15px;"><i class="fas fa-user-plus fa-3x" style="color: white;"></i></div>
     <div class="row">
         <div class="col-md-6 mx-auto">
             <span class="anchor" id="formLogin"></span>
 
             <!-- form card login -->
             <div class="card rounded-0">
-                <div class="card-header">
+                <!-- <div class="card-header">
                     <h3 class="mb-0">Register</h3>
-                </div>
+                </div> -->
                 <div class="card-body">
                     <form class="form">
                         <div class="form-group">
-                            <label for="uname1">Username</label>
-                            <input type="text" [(ngModel)]="registerUserData.username" name="username"
+                            <!-- <label for="uname1">Username</label> -->
+                            <input type="text" [(ngModel)]="registerUserData.username" placeholder="Username" name="username"
                                 class="form-control rounded-0" required>
                         </div>
                         <div class="form-group">
-                            <label for="uname1">Email</label>
-                            <input type="text" [(ngModel)]="registerUserData.email" name="email"
+                            <!-- <label for="uname1">Email</label> -->
+                            <input type="text" [(ngModel)]="registerUserData.email" placeholder="Email" name="email"
                                 class="form-control rounded-0" required>
                         </div>
                         <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" [(ngModel)]="registerUserData.password" name="password"
+                            <!-- <label>Password</label> -->
+                            <input type="password" [(ngModel)]="registerUserData.password" placeholder="Password" name="password"
                                 class="form-control rounded-0" required>
                         </div>
                         <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" [(ngModel)]="registerUserData.first_name" name="first_name"
+                            <!-- <label>First Name</label> -->
+                            <input type="text" [(ngModel)]="registerUserData.first_name" placeholder="Fast Name" name="first_name"
                                 class="form-control rounded-0" required>
                         </div>
 
                         <div class="form-group">
-                            <label>Second name</label>
-                            <input type="text" [(ngModel)]="registerUserData.second_name" name="second_name"
+                            <!-- <label>Second name</label> -->
+                            <input type="text" [(ngModel)]="registerUserData.second_name" placeholder="Second Name" name="second_name"
                                 class="form-control rounded-0" required>
                         </div>
                         
