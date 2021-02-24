@@ -1,7 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { GpsService } from '../gps.service';
 
+import { Component, HostBinding } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
+import { GpsService } from '../gps.service';
 
 
 @Component({
@@ -9,71 +16,44 @@ import { GpsService } from '../gps.service';
   templateUrl: './locate-me.component.html',
   styleUrls: ['./locate-me.component.css'],
   providers: [GpsService]
+
 })
-export class LocateMeComponent implements OnInit {
-  currentLat: any;
-  currentLong: any;
-  marker: any;
-  map: any;
-  location:any ={};
- 
-  
+export class LocateMeComponent {
+  title = 'Mama-Wa-Estate';
+  lat = -1.9988788
+  lng = 30.193555099999994;
+  location(x){ 
+    this.lat=x.coords.lat; 
+    this.lng=x.coords.lng; 
+  } 
 
-watchPosition(){
-  navigator.geolocation.watchPosition((position) => {
-    console.log(
-      'lat: ${position.coords.latitude}, lon: ${position.coords.longitude}'
-    );
-  },(err) => {
-    console.log(err);
-  },{
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
-  })
-  
-}
-
-//this is for plotting marker
-// showPosition(position) {
-//   this.currentLat = position.coords.latitude;
-//   this.currentLong = position.coords.longitude;
-
-//   let location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-//   this.map.panTo(location);
-
-//   if (!this.marker) {
-//     this.marker = new google.maps.Marker({
-//       position: location,
-//       map: this.map,
-//       title: 'Got you!'
-//     });
-//   }
-//   else {
-//     this.marker.setPosition(location);
-//   }
-// }
-
-
-  constructor(private navigator: GpsService){
-    
-  }
-
-  ngOnInit(): void {
-    if (!navigator.geolocation) {
-      console.log('location is not supported');
-
-      navigator.geolocation.getCurrentPosition( position => {
-        console.log(
-          'lat: ${position.coords.latitude}, lon: ${position.coords.longitude}'
-          );
-      
+  locateMe() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        let currentLat = position.coords.latitude;
+        let currentLong = position.coords.longitude;
+        console.log(currentLat)
+        console.log(currentLong)
       });
+    } else {
+      alert("Geolocation is not supported by this browser.");
     }
-   
   }
-  register (myForm: NgForm) {
-    console.log('Successful registration');
-    console.log(myForm);
+  watchPosition(){
+    let deslat = 0;
+    let deslon = 0;
+    let id = navigator.geolocation.watchPosition(
+      (position) => {
+      console.log(
+        'lat: ${position.coords.latitude}, lon: ${position.coords.longitude}'
+      );
+    },(err) => {
+      console.log(err);
+    },{
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    })
+    
   }
 }
