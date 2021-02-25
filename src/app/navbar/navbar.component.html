@@ -29,7 +29,10 @@
                 <button class="btn btn-outline-light my-2 my-sm-0" (click)="locateMe()"><i class="fas fa-map-marker-alt"></i> Locate me</button>
             </form>
         </ul>
-        <div>
+        <div *ngIf="!_authService.loggedIn()">
+            <a routerLink="/cart"><i class="fas fa-shopping-cart fa-2x" style="color:white;"></i></a>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+        <div *ngIf="_authService.loggedIn()">
             <a routerLink="/cart"><i class="fas fa-shopping-cart fa-2x" style="color:white;"></i><span style="color: black; font-weight: bold;">{{products.length}}</span></a>
         </div>&nbsp;&nbsp;&nbsp;&nbsp;
         <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
