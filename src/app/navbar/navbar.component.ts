@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { AddToCartService } from '../add-to-cart.service';
 
+
 declare const L: any;
 
 @Component({

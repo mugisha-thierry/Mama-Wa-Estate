@@ -11,7 +11,7 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LocateMeComponent } from './locate-me/locate-me.component';
-
+import { CategoryComponent} from './category/category.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'singlestore/:id', component: SinglestoreComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
+  { path: 'category', component: CategoryComponent},
   { path: 'product/:id', component: ProductsComponent},
   { path: 'search', component: SearchComponent},
   { path: 'cart', component: CartComponent, canActivate:[AuthGuard]},

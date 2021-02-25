@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { StoreService } from '../store.service';
 import { Router } from '@angular/router';
 
+import { MapsAPILoader } from '@agm/core';
+
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
