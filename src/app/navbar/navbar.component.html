@@ -47,15 +47,9 @@
                     <a class="btn btn-light" *ngIf="!_authService.loggedIn()" routerLink="/login"><i class="fas fa-user"></i> Login</a>
                 </li>&nbsp;
                 <li class="nav-item active">
-<<<<<<< HEAD
-                    <a class="btn btn-dark" *ngIf="_authService.loggedIn()" routerLink="profile"><i class="fas fa-id-card"></i>Profile</a>
-                </li>
-                <a class="btn btn-dark" style="color: white;" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()"><i class="fas fa-sign-out-alt"></i>Logout</a>
-=======
                     <a class="btn btn-light" *ngIf="_authService.loggedIn()" routerLink="profile"><i class="fas fa-id-card"></i>Profile</a>
                 </li>&nbsp;
                 <a class="btn btn-light" style="color: black;" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()"><i class="fas fa-sign-out-alt"></i>Logout</a>
->>>>>>> 3e535169411e6959bab9756d82e443c97dd60c0b
                 
             </ul>
         </div>
