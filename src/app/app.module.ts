@@ -37,6 +37,7 @@ import { SinglestoreComponent } from './singlestore/singlestore.component';
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -73,6 +74,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     FormsModule,
     HttpClientModule,
     FlashMessagesModule,
+    NgbModule,
   ],
   providers: [AuthService,AuthGuard, GpsService, StoreService,
     {

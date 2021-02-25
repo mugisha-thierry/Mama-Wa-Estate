@@ -14,6 +14,7 @@ export class CartComponent implements OnInit {
   [x: string]: any;
   body=[]
   products =[]
+  // total:number=0;
   constructor(@Inject(DOCUMENT) private _document: Document,private flashMessagesService: FlashMessagesService,private _router: Router,private _cartProductsService:AddToCartService) { }
 
   ngOnInit(): void {
@@ -25,6 +26,24 @@ export class CartComponent implements OnInit {
     },
     err => console.log(err)
     )
+  
+  }
+  sum(){
+    // this._cartProductsService.getCartProducts()
+    // .subscribe(
+    // res=>{
+    //   this.products =res
+    //   console.log(this.products.length)
+    // },
+    // err => console.log(err)
+    // )
+    let y:number = 0;
+    let x:number;
+    for(let i=0; i < this.products.length; i++){
+      x = (this.products[i].quantity * this.products[i].subtotal);
+      y = y + x;
+    }
+    return y
   }
   deleteFromCart(id:number){
     this._cartProductsService.deleteCart(id)

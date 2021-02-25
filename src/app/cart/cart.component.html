@@ -24,7 +24,7 @@
             <tr *ngFor="let p of products">
               <td (click)="deleteFromCart(p.id)" class="d-flex align-items-center justify-content-around" style="cursor: pointer;">
                 <img (click)="deleteFromCart(p.id)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png" alt="gvyy" height="60" class="order-1">
-                <span class="text-danger" style="cursor: pointer;"><i class="fa fa-trash"></i></span>
+                <span (click)="deleteFromCart(p.id)" class="text-danger" style="cursor: pointer;"><i class="fa fa-trash"></i></span>
               </td>
               <td>
                 <p>{{p.product}}</p>
@@ -54,7 +54,7 @@
               <td></td>
               <td></td>
               <td *ngIf="(products | json) != '[]'">TOTAL</td>
-              <td *ngIf="(products | json) != '[]'">{{answe()}}</td>
+              <td *ngIf="(products | json) != '[]'">{{sum()}}</td>
               <td *ngIf="(products | json) === '[]'">No products in the cart</td>
               <!-- <td>{{cartTotal | currency:'USD'}}</td> -->
 

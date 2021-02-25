@@ -50,9 +50,23 @@
                     <div class="row no-gutters">
                         <div class="col-md-8">
                             <div class="card-body">
-                                <p>Products</p>
-                                <p>Delivery fee</p>
-                                <p>Total</p>
+                                <table class="table">
+                                    <tr>
+                                        <td>Products</td>
+                                        <td>KSH</td>
+                                        <td>{{sum()}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Delivery fees</td>
+                                        <td>KSH</td>
+                                        <td>200</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td>KSH</td>
+                                        <td>{{total()}}</td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>

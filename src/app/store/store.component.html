@@ -1,23 +1,31 @@
-<body  style="background-color: #b4dce6;">
-
+<body style="background-color: #b4dce6;">
     <div class="container">
         <h2 class="text-info mb-3 text-black-50" style="padding-top: 10px;">Stores</h2>
         <div class="row">
             <div class="col-md-4" *ngFor="let store of stores">
-                <div class="card mb-3" (click)="selectStore(store.id)" style="max-width: 400px; border-radius: 20px; cursor:pointer;">
+                <div class="card mb-3" style="max-width: 400px; border-radius: 20px; cursor:pointer;">
                     <div class="row no-gutters">
-                        <div class="col-md-4" style="margin-top: 30px;">
+                        <div class="col-md-4" (click)="selectStore(store.id)" style="margin-top: 30px; ">
                             <img src="https://st.depositphotos.com/1062085/3876/v/950/depositphotos_38761039-stock-illustration-small-shop-on-the-street.jpg"
                                 style="cursor:pointer;" class="card-img" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title"   style="color: black; font-weight: bold; cursor:pointer;">
+                                <h5 class="card-title" (click)="selectStore(store.id)"
+                                    style="color: black; font-weight: bold; cursor:pointer;">
                                     {{store.name}}</h5>
-                                <p class="card-text">
+                                <p (click)="selectStore(store.id)" class="card-text">
                                     <i style="color: red;" class="fas fa-map-marker-alt"></i> {{store.location}}</p>
                                 <hr>
-                                <p class="card-text"><small class="text-muted">{{store.service}}</small></p>
+                                <p class="card-text"><small
+                                        class="text-muted">{{store.service}}</small>
+                                    <ngb-rating style="font-size:x-large; color: yellow;" [max]="5"
+                                        [(rate)]="currentRate" [readonly]="false"></ngb-rating>
+                                </p>
+
+
+
+
                             </div>
                         </div>
                     </div>
