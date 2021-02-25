@@ -13,6 +13,7 @@ export class StoreComponent implements OnInit {
 
   constructor(private _storeService: StoreService, private router:Router) { }
 
+  currentRate:number =3;
   ngOnInit() {
     this._storeService.getStores()
       .subscribe(
