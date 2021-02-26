@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from '../category.service';
 import { Observable, BehaviorSubject, Subject } from 'rxjs';
 
-import { MapsAPILoader, MouseEvent } from '@agm/core';
+import { MapsAPILoader } from '@agm/core';
 import { mergeMap, map, tap } from 'rxjs/operators';
 
 
