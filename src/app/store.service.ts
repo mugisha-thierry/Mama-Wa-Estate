@@ -17,7 +17,7 @@ export class StoreService {
 
   public openWindow = new Subject();
   
-  constructor(private http: HttpClient, private gpsService: GpsService, private mapApiLoader: MapsAPILoader, private categoryService: CategoryService) { }
+  constructor(private http: HttpClient, private mapApiLoader: MapsAPILoader, private categoryService: CategoryService) { }
 
   mapClicked($event: MouseEvent) {
     console.log($event);
