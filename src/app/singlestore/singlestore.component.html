@@ -5,7 +5,7 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card mb-3" style="max-width: 400px; border-radius: 80px;" >
+                        <div class="card mb-3" style="max-width: 400px; border-radius: 80px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4" style="margin-top: 30px;">
                                     <img src="https://st.depositphotos.com/1062085/3876/v/950/depositphotos_38761039-stock-illustration-small-shop-on-the-street.jpg"
@@ -44,24 +44,21 @@
         <div class="row">
             <div class="col-md-4" *ngFor="let product of products">
                 <ng-container *ngIf="product.store == store.id">
-<<<<<<< HEAD
-                    <div class="card mb-3" style="max-width: 400px;"  style="cursor:pointer;">
-=======
-                    <div class="card mb-3" style="max-width: 400px;"  style="cursor:pointer; border-radius: 15px;">
->>>>>>> 3e535169411e6959bab9756d82e443c97dd60c0b
+                    <div class="card mb-3" style="max-width: 400px;" style="cursor:pointer; border-radius: 15px;">
                         <div class="row no-gutters">
                             <div class="col-md-4" (click)="selectProduct(product.id)" style="margin-top: 30px;">
                                 <img src="product.image" alt="">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title" (click)="selectProduct(product.id)" style="color: black; font-weight: bold;"
-                                        style="cursor:pointer;">
+                                    <h5 class="card-title" (click)="selectProduct(product.id)"
+                                        style="color: black; font-weight: bold;" style="cursor:pointer;">
                                         {{product.name}}</h5>
                                     <p class="card-text" style="color: black;">{{product.description}}</p>
                                     <hr>
                                     <p class="card-text">{{product.selling_price}} KSH</p>
-                                    <button class="btn btn-primary btn-lg btn-block btn-sm" (click)="AddToCart(product.id)">Add to cart</button>
+                                    <button class="btn btn-primary btn-lg btn-block btn-sm"
+                                        (click)="AddToCart(product.id)">Add to cart</button>
                                 </div>
                             </div>
                         </div>

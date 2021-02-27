@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs/Subject';
+import { MapsAPILoader } from '@agm/core';
+import { CategoryService } from './category.service';
 @Injectable({
   providedIn: 'root'
 })
