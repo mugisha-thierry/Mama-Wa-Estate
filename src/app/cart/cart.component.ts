@@ -3,6 +3,7 @@ import { AddToCartService } from '../add-to-cart.service';
 import { Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { FlashMessagesService } from 'ngx-flash-messages';
+import { ProductsService } from '../products.service';
 // import { totalmem } from 'os';
 
 @Component({
@@ -14,8 +15,9 @@ export class CartComponent implements OnInit {
   [x: string]: any;
   body=[]
   products =[]
+  prd=[]
   // total:number=0;
-  constructor(@Inject(DOCUMENT) private _document: Document,private flashMessagesService: FlashMessagesService,private _router: Router,private _cartProductsService:AddToCartService) { }
+  constructor(@Inject(DOCUMENT) private _document: Document, private _productService: ProductsService,private flashMessagesService: FlashMessagesService,private _router: Router,private _cartProductsService:AddToCartService) { }
 
   ngOnInit(): void {
     this._cartProductsService.getCartProducts()
@@ -27,16 +29,13 @@ export class CartComponent implements OnInit {
     err => console.log(err)
     )
   
+    this._productService.getAllproducts()
+    .subscribe(
+      res => this.prd = res,
+      err => console.log(err)
+    )
   }
   sum(){
-    // this._cartProductsService.getCartProducts()
-    // .subscribe(
-    // res=>{
-    //   this.products =res
-    //   console.log(this.products.length)
-    // },
-    // err => console.log(err)
-    // )
     let y:number = 0;
     let x:number;
     for(let i=0; i < this.products.length; i++){
@@ -69,11 +68,13 @@ export class CartComponent implements OnInit {
     return total
   
   }
-  update(id:number){
-    this._cartProductsService.updateQty(id,this.body)
+  update(id:number,qty:number){
+
+    console.log(qty)
+    this._cartProductsService.updateQty(id,qty)
     .subscribe(
       res=>{
-      console.log('ok')
+      console.log('success')
 
       },
       err=>console.log(err)

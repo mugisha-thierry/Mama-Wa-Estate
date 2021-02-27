@@ -21,11 +21,8 @@ export class AddToCartService {
   deleteCart(id:number){
     return this.http.delete<any>(this.deleteUrl+'cartproduct/'+id)
   }
-  updateQty(id:number,body){
-    return this.http.put<any>(this.url+ 'cartproduct/' + id+'/',body,{
-      headers:new HttpHeaders({
-         'content-Type':'application/json'
-      })
+  updateQty(id:number,_body:number){
+    return this.http.patch<any>(this.url+ 'cartproduct/' + id+'/',{"quantity":"_body"},{
     })
   }
 }

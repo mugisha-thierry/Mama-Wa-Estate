@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private _registerUrl = "http://127.0.0.1:8000/api/auth/register";
-  private _loginUrl = "http://127.0.0.1:8000/api/auth/login";
+  private _registerUrl = "http://127.0.0.1:8000/api/auth/register/";
+  private _loginUrl = "http://127.0.0.1:8000/api/auth/login/";
 
   constructor(private http: HttpClient, private _router: Router) { }
 
