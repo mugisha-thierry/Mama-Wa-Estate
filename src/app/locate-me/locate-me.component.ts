@@ -1,4 +1,3 @@
-
 import { Component, HostBinding } from '@angular/core';
 import {
   trigger,
@@ -9,7 +8,7 @@ import {
   // ...
 } from '@angular/animations';
 import { GpsService } from '../gps.service';
-
+import { MapsAPILoader } from '@agm/core';
 
 @Component({
   selector: 'app-locate-me',

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from '../category.service';
 import { Observable, BehaviorSubject, Subject } from 'rxjs';
 
+import { MapsAPILoader } from '@agm/core';
 import { mergeMap, map, tap } from 'rxjs/operators';
 
 
@@ -31,11 +32,7 @@ export class CategoryComponent implements OnInit {
      )
    );
 
-// this.category$ = this.list.category$
-//           .pipe(
-//             tap((category: any) => this.selectedCategory.next('pharmacy')),
-//             map(categoryObj => Object.keys(categoryObj).map((key,index) => categoryObj[key].name))
-//            );
+
    }
 
   ngOnInit(): void {

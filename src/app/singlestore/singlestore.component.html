@@ -44,7 +44,11 @@
         <div class="row">
             <div class="col-md-4" *ngFor="let product of products">
                 <ng-container *ngIf="product.store == store.id">
+<<<<<<< HEAD
+                    <div class="card mb-3" style="max-width: 400px;"  style="cursor:pointer;">
+=======
                     <div class="card mb-3" style="max-width: 400px;"  style="cursor:pointer; border-radius: 15px;">
+>>>>>>> 3e535169411e6959bab9756d82e443c97dd60c0b
                         <div class="row no-gutters">
                             <div class="col-md-4" (click)="selectProduct(product.id)" style="margin-top: 30px;">
                                 <img src="product.image" alt="">
